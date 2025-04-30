@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  #my-form {
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #my-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  #my-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  
+  #my-form label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #555;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  #my-form input[type="text"],
+  #my-form input[type="email"],
+  #my-form input[type="password"],
+  #my-form select,
+  #my-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 5px 0 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  #my-form input:focus,
+  #my-form select:focus,
+  #my-form textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+  }
+  
+  #my-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  #my-form input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  #my-form input[type="checkbox"]:checked {
+    background-color: #3498db;
+    border-color: #3498db;
+  }
+  
+  #my-form input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: white;
+    position: absolute;
+    left: 2px;
+    top: -2px;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  #my-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+  }
+  
+  #my-form button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  #my-form button[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+  
+  #my-form button[type="reset"] {
+    background-color: #f1f1f1;
+    color: #555;
+  }
+  
+  #my-form button[type="reset"]:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 600px) {
+    #my-form {
+      padding: 20px;
+    }
+    
+    .button-group {
+      flex-direction: column;
+    }
+    
+    #my-form button {
+      width: 100%;
+    }
+  }
+  
+  /* Animation for form elements */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  #my-form > * {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  /* Create staggered animation */
+  #my-form label:nth-child(1) { animation-delay: 0.1s; }
+  #my-form input:nth-child(2) { animation-delay: 0.2s; }
+  #my-form label:nth-child(3) { animation-delay: 0.3s; }
+  #my-form input:nth-child(4) { animation-delay: 0.4s; }
+  #my-form label:nth-child(5) { animation-delay: 0.5s; }
+  #my-form input:nth-child(6) { animation-delay: 0.6s; }

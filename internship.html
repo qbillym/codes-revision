@@ -57,6 +57,10 @@
       cursor: pointer;
     }
 
+    .mobile-menu-btn {
+      display: none; /* ✨ hidden by default */
+    }
+
     .hero {
       height: 50vh;
       background-color: rgb(50, 50, 195);
@@ -83,7 +87,7 @@
       background-color: white;
       color: blue;
     }
-    
+
     h3.section-title {
       text-align: center;
       margin: 40px 0 20px 0;
@@ -91,22 +95,25 @@
       font-weight: bold;
       width: 100%;
     }
-    .testimonials{
-        background-color: white;
+
+    .testimonials {
+      background-color: white;
     }
-    .features, .testimonials {
+
+    .features,
+    .testimonials {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
       padding: 20px;
     }
-    
+
     .how-it-works-container {
       background-color: gray;
       padding: 20px 0;
     }
-    
+
     .steps-container {
       display: flex;
       justify-content: center;
@@ -114,33 +121,36 @@
       gap: 20px;
       padding: 20px;
     }
-    
-    .step-card{
+
+    .step-card {
       height: 150px;
       background-color: white;
       border-radius: 10px;
       padding: 20px;
       width: 300px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin-top: 20px;
     }
-    
-    .feature-card, .testimonial-card {
+
+    .feature-card,
+    .testimonial-card {
       background-color: white;
       border-radius: 10px;
       padding: 20px;
       width: 300px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
 
-    .feature-card h4, .step-card h4 {
+    .feature-card h4,
+    .step-card h4 {
       font-size: 18px;
       margin-bottom: 10px;
       color: rgb(30, 30, 150);
     }
 
-    .feature-card p, .step-card p {
+    .feature-card p,
+    .step-card p {
       font-size: 14px;
     }
 
@@ -167,7 +177,8 @@
       font-size: 16px;
     }
 
-    .footer-section a, .footer-section p {
+    .footer-section a,
+    .footer-section p {
       color: white;
       font-size: 14px;
       text-decoration: none;
@@ -184,13 +195,134 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* Improved Responsive Breakpoints */
+    @media (max-width: 1200px) {
+      .hero h2 {
+        font-size: calc(20px + 0.5vw);
+      }
+      .hero p {
+        font-size: calc(14px + 0.3vw);
+      }
+    }
+
+    @media (max-width: 992px) {
+      header {
+        padding: 15px 30px;
+      }
+      nav {
+        gap: 15px;
+      }
+      .feature-card,
+      .step-card,
+      .testimonial-card {
+        width: calc(50% - 30px);
+        min-width: 280px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: row;
+        padding: 15px 20px;
+      }
+      nav {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block; /* ✨ visible only for mobile */
+        background: none;
+        border: none;
+        color: blue;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      nav.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      .hero {
+        height: auto;
+        padding: 60px 20px;
+      }
+      .feature-card,
+      .step-card,
+      .testimonial-card {
+        width: 100%;
+        max-width: 400px;
+      }
+      footer {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .footer-section {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      header {
+        padding: 12px 15px;
+      }
+      .logo {
+        font-size: 20px;
+      }
+      .get-started-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+      .hero h2 {
+        font-size: 22px;
+      }
+      .hero p {
+        font-size: 15px;
+      }
+      h3.section-title {
+        font-size: 20px;
+        margin: 30px 0 15px;
+      }
+      .step-card {
+        height: auto;
+        min-height: 150px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero {
+        padding: 50px 15px;
+      }
+      .hero h2 {
+        font-size: 20px;
+      }
+      .hero p {
+        font-size: 14px;
+      }
+      .get-started-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
+
+
+  
+
 <body>
 
   <header>
     <div class="logo"><span>SMART</span> LIGHT</div>
-    <nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="mainNav">
       <a href="#features">Features</a>
       <a href="#how-it-works">How It Works</a>
       <a href="#testimonials">Testimonials</a>
@@ -278,6 +410,41 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+
+    mobileMenuBtn.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function() {
+        mainNav.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
