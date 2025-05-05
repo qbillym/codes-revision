@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Billy Mucyo | Web Developer</title>
+  <meta name="description" content="Portfolio of Billy Mucyo, a web developer specializing in responsive websites">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span><</span><strong>Developer B</strong><span>/></span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <img src="meee.jpeg" alt="Billy's photo" class="fade-in" />
+      <div class="intro">
+        <h1 class="fade-in delay-1">I'm Billy, a Web Developer</h1>
+        <p class="fade-in delay-1">Crafting clean, responsive websites and applications</p>
+        <div class="buttons fade-in delay-2">
+          <a href="#about" class="btn-green"><i class="fas fa-user"></i> About me</a>
+          <a href="#projects" class="btn-outline"><i class="fas fa-code"></i> My projects</a>
+          <a href="#contact" class="btn-outline"><i class="fas fa-envelope"></i> Contact me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="fade-in delay-1">
+      <div class="section-title">
+        <h2>About me</h2>
+      </div>
+      <p>
+        I'm Sangwa Billy Mucyo, currently a trainee majoring in Software development,
+        emphasizing the creation of responsive and dynamic web applications.
+      </p>
+      <div class="skills">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Responsive Design</span>
+        <span class="skill-tag">Web Development</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Node.js</span>
+      </div>
+    </section>
+
+    <section id="projects" class="fade-in delay-2">
+      <div class="section-title">
+        <h2>My Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>E-commerce Website</h3>
+          <p>A fully responsive online store with cart functionality and payment integration.</p>
+          <div class="project-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn-green btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#" class="btn-outline btn-small"><i class="fab fa-github"></i> View Code</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Task Management App</h3>
+          <p>A productivity application for organizing daily tasks with drag-and-drop interface.</p>
+          <div class="project-tags">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn-green btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#" class="btn-outline btn-small"><i class="fab fa-github"></i> View Code</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Portfolio Template</h3>
+          <p>A customizable portfolio template for creative professionals.</p>
+          <div class="project-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn-green btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#" class="btn-outline btn-small"><i class="fab fa-github"></i> View Code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in delay-3">
+      <div class="section-title">
+        <h2>Contact me</h2>
+      </div>
+      <form id="contact-form">
+        <div class="input-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="input-group">
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-green"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mucyobilly3@gmail.com">mucyobilly3@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> Phone: +250 7XX XXX XXX</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fade-in delay-3">
+    <p>© <script>document.write(new Date().getFullYear())</script> Billy Mucyo. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
